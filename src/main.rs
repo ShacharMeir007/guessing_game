@@ -12,9 +12,13 @@ fn main() {
 
         guess.clear();
 
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
+        match  io::stdin()
+            .read_line(&mut guess){
+            Ok(_) => {},
+            Err(e) => {
+                println!("{e}" )
+            },
+        }
         
 
         let guess: u32 = match guess.trim().parse(){
