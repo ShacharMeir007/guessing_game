@@ -51,7 +51,3 @@ fn main() {
     
 
 }
-
-fn test() {
-    println!("hello there")
-}
