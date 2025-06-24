@@ -11,7 +11,7 @@ fn main() {
         println!("Please input your guess.");
 
         guess.clear();
-        
+
         // The following is a more consice way to handle the error than using the match as in the followed comment
         // since the default arm in the match doesn't do anything.
         if let Err(e) = io::stdin()
@@ -52,3 +52,6 @@ fn main() {
 
 }
 
+fn test() {
+    
+}
