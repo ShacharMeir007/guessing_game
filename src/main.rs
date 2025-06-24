@@ -11,14 +11,21 @@ fn main() {
         println!("Please input your guess.");
 
         guess.clear();
+        
+        // The following is a more consice way to handle the error than using the match as in the followed comment
+        // since the default arm in the match doesn't do anything.
+        if let Err(e) = io::stdin()
+            .read_line(&mut guess) {
+                println!("{e}")
+            }
 
-        match  io::stdin()
-            .read_line(&mut guess){
-            Ok(_) => {},
-            Err(e) => {
-                println!("{e}" )
-            },
-        }
+        // match  io::stdin()
+        //     .read_line(&mut guess){
+        //     Err(e) => {
+        //         println!("{e}" )
+        //     },
+        //     _ => {}
+        // }
         
 
         let guess: u32 = match guess.trim().parse(){
